@@ -12,8 +12,8 @@ Welcome to sphinxdoc-test's documentation!
 
    includeme
    page1
-   page1a
-   page1b
+   page2
+   page3
 
 
 
