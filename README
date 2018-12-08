@@ -6,6 +6,7 @@ https://daler.github.io/sphinxdoc-test/includeme.html#directory-structure
 
 Publishing sphinx-generated docs on github
 https://daler.github.io/sphinxdoc-test/includeme.html
+都在原本的 git repo 下面有docs 目錄, 放置產生sphinx doc 的source
 
 
 Sphinx Example and Cheat Sheet
@@ -68,3 +69,9 @@ Python implementation of algorithms and design patterns.
 
 ```
 
+sphinx theme
+===============
+
+conf.py 修改 thtme = "{mew-theme}" 就可以了
+安裝辦法就是上  sphinx 網站查看, 使用pip install
+http://www.writethedocs.org/guide/tools/sphinx-themes/
