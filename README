@@ -4,3 +4,67 @@ this is made by following sphinxdoc-test
 https://daler.github.io/sphinxdoc-test/includeme.html#directory-structure
 
 
+Publishing sphinx-generated docs on github
+https://daler.github.io/sphinxdoc-test/includeme.html
+
+
+Sphinx Example and Cheat Sheet
+https://github.com/davidstutz/sphinx-example
+
+
+awesome-python
+https://github.com/vinta/awesome-python/tree/master
+
+rst style
+===================
+create a link anchor
+.. _{new-label}:
+
+use a link anchor
+:ref:`{new_lable}`
+
+
+use any titles
+`{title}`_
+
+.. {directive}:: {parameters}
+  :{options}:
+
+
+web document layout
+===================
+
+microsoft API document
+https://docs.microsoft.com/en-us/windows/desktop/api/winbase/nf-winbase-createnamedpipea
+left side : tree-of-functions
+right side: page toc
+
+awesome-python
+sphinx sample
+left side : tree
+right side : none
+
+
+sphinx and rst syntax guide
+https://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html#module-sample
+left-side: None
+right-side: tree
+
+
+awesome-python
+包括podcast, twitter-link, weekly, video
+service, websocket,web-framework,web-crawling,
+分很多類
+分類內如果很多, 還會再分類下去到第三層
+```
+Algorithms and Design Patterns
+----------------------------------
+Python implementation of algorithms and design patterns.
+
+ * algorithms - Minimal examples of data structures and algorithms in Python.
+ * PyPattyrn - A simple yet effective library for implementing common design patterns.
+ * python-patterns - A collection of design patterns in Python.
+ * sortedcontainers - Fast, pure-Python implementation of SortedList, SortedDict, and SortedSet types.
+
+```
+
