@@ -28,8 +28,13 @@ you could use MD's local link to jump
 ### bt-python
 
 * [pybluetooth](https://github.com/pebble/pybluetooth)
-* [pygatt](https://github.com/peplin/pygatt)
+
 * [pyobex](https://pypi.org/project/PyOBEX/)
+* [pypbap](https://github.com/bmwcarit/pypbap)
+* [a2dp-bluetooth-server](https://github.com/karaambaa/a2dp-bluetooth-server)
+* [phony-hfp](https://github.com/littlecraft/phony)
+
+* [pygatt](https://github.com/peplin/pygatt)
 
 ## sofware
   - online editor

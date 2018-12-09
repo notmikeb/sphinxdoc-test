@@ -39,9 +39,19 @@ bt-python
 ^^^^^^^^^
 
 
-* `pybluetooth <https://github.com/pebble/pybluetooth>`_
-* `pygatt <https://github.com/peplin/pygatt>`_
-* `pyobex <https://pypi.org/project/PyOBEX/>`_
+* 
+  `pybluetooth <https://github.com/pebble/pybluetooth>`_
+
+* 
+  `pyobex <https://pypi.org/project/PyOBEX/>`_
+
+* `pypbap <https://github.com/bmwcarit/pypbap>`_
+* `a2dp-bluetooth-server <https://github.com/karaambaa/a2dp-bluetooth-server>`_
+* 
+  `phony-hfp <https://github.com/littlecraft/phony>`_
+
+* 
+  `pygatt <https://github.com/peplin/pygatt>`_
 
 sofware
 -------

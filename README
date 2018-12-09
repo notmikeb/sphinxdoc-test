@@ -75,3 +75,17 @@ sphinx theme
 conf.py 修改 thtme = "{mew-theme}" 就可以了
 安裝辦法就是上  sphinx 網站查看, 使用pip install
 http://www.writethedocs.org/guide/tools/sphinx-themes/
+
+
+
+editor
+================
+
+[rst online editor] (http://rst.ninjs.org/)
+[plantuml editor] (https://www.planttext.com/)
+[markdown editor] (https://dillinger.io/)
+
+當使用markdown 的時候, title會變成 anchor
+當使用 [{text}](#{anchor-name}) 就可以連接的到
+
+有readme.rst > readme.md
