@@ -28,9 +28,14 @@ bt-stack
 
 
 * `wiki-bluetooth-stack <https://en.wikipedia.org/wiki/Bluetooth_stack>`_
-* `zephyr <https://github.com/zephyrproject-rtos/zephyr>`_
+* 
+  `zephyr <https://github.com/zephyrproject-rtos/zephyr>`_
+
 
   * `https://en.wikipedia.org/wiki/Bluetooth_stack#Zephyr_Project <https://en.wikipedia.org/wiki/Bluetooth_stack#Zephyr_Project>`_
+
+* 
+  `blue-cover <https://github.com/minarofaeil/bluecove>`_ - java library for bluetooth (JSR-82 implementation)
 
 bt-product
 ^^^^^^^^^^
@@ -47,11 +52,18 @@ bt-python
 
 * `pypbap <https://github.com/bmwcarit/pypbap>`_
 * `a2dp-bluetooth-server <https://github.com/karaambaa/a2dp-bluetooth-server>`_
+* `phony-hfp <https://github.com/littlecraft/phony>`_
 * 
-  `phony-hfp <https://github.com/littlecraft/phony>`_
+  `nOBEX <https://github.com/nccgroup/nOBEX>`_ - nOBEX allows emulating the PBAP, MAP, and HFP profiles to test vehicle infotainment systems and similar devices using these profiles
 
 * 
   `pygatt <https://github.com/peplin/pygatt>`_
+
+bt-stack all
+^^^^^^^^^^^^
+
+
+* `32feet.net <https://archive.codeplex.com/?p=32feet>`_ - 32feet 32feetWidcomm.dll version Works even when the Microsoft Bluetooth stack is also active
 
 sofware
 -------
@@ -61,6 +73,24 @@ sofware
 
   * `markdown-editor <https://dillinger.io/>`_
   * `plantuml-editor <https://www.planttext.com/>`_
+
+wireshardk
+^^^^^^^^^^
+
+
+* build-wireshark(https://www.wireshark.org/docs/wsdg_html_chunked/ChSetupWin32.html)
+  use vs2017, qt, chocolatey
+* download-wireshark(https://www.wireshark.org/download/src/)
+
+bt-at-command
+^^^^^^^^^^^^^
+
+
+* 
+  `sim800 <https://www.raviyp.com/embedded/215-sim800-series-bluetooth-at-commands>`_
+
+* 
+  `an994 <https://www.silabs.com/documents/login/application-notes/AN994.pdf>`_
 
 note
 ----
