@@ -1,2 +1,4 @@
 m2r --overwrite README.md 
-cd docs && make html && cd ..
+start cmd /c  "cd docs && make html && cd .."
+
+start ..\sphinxdoc-test-docs\html\index.html
