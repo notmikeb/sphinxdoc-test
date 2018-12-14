@@ -11,7 +11,7 @@ Welcome to sphinxdoc-test's documentation!
    :caption: Contents:
 
    includeme
-   page1
+   rst
    page2
    page3
 
