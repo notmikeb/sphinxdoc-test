@@ -17,5 +17,6 @@ This is a statement.
 It's okay to use this code.
 
 
+.. literalinclude:: scripts\live2.py
 
 `sphinx.html <https://pythonhosted.org/an_example_pypi_project/sphinx.html#is-sweaty>`_

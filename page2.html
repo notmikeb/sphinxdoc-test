@@ -163,6 +163,72 @@
 <p><span class="versionmodified">New in version 0.0.2.</span></p>
 </div>
 <p>It’s okay to use this code.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">configparser</span>
+
+<span class="n">path</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Program Files (x86)\Frontline Test System II\Frontline 15&quot;</span>
+<span class="n">name</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;Liveimport.ini&quot;</span>
+
+<span class="n">fpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+<span class="n">cp1</span> <span class="o">=</span> <span class="n">configparser</span><span class="o">.</span><span class="n">ConfigParser</span><span class="p">()</span>
+<span class="n">cp1data</span> <span class="o">=</span> <span class="n">cp1</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">fpath</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cp1data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cp1</span><span class="o">.</span><span class="n">sections</span><span class="p">())</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">this is the read result of ini file</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">keys</span> <span class="o">=</span> <span class="n">cp1</span><span class="o">.</span><span class="n">sections</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">k1</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
+  <span class="k">for</span> <span class="n">k2</span> <span class="ow">in</span> <span class="n">cp1</span><span class="p">[</span><span class="n">k1</span><span class="p">]:</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">,</span> <span class="n">cp1</span><span class="p">[</span><span class="n">k1</span><span class="p">][</span><span class="n">k2</span><span class="p">]))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;example file is at C:\Program Files (x86)\Frontline Test System II\Frontline 15\Live Import Developers Kit\Straight C Sample&quot;</span><span class="p">)</span>   
+
+
+
+
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">tools</span>
+<span class="sd">http://www.nirsoft.net/utils/dll_export_viewer.html</span>
+
+<span class="sd">C:\Program Files (x86)\Frontline Test System II\Frontline 15\Live Import Developers Kit\h</span>
+<span class="sd">liveimport.h</span>
+
+<span class="sd">typedef HRESULT (InitializeLiveImport)(const TCHAR* szMemoryName, const TCHAR* szConfiguration, bool* pboolSuccess);</span>
+<span class="sd">typedef HRESULT (SendFrame)(</span>
+<span class="sd">		int iOriginalLength,				// The &quot;real&quot; length of a frame. Some frames may be truncated, so this may not be the same as included length</span>
+<span class="sd">		int iIncludedLength,				// The size of the data passed in this call</span>
+<span class="sd">		const BYTE* pbytFrame,						// The actual bytes of the frame</span>
+<span class="sd">		int iDrf,							// any errors or other data related flag</span>
+<span class="sd">		int iStream,						// Which side this data comes from</span>
+<span class="sd">		__int64 i64Timestamp);</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">ctypes</span> <span class="k">import</span> <span class="o">*</span>
+
+<span class="n">dll1</span> <span class="o">=</span> <span class="n">cdll</span><span class="o">.</span><span class="n">WinDll</span><span class="p">(</span><span class="s2">&quot;LiveImportAPI_x64&quot;</span><span class="p">)</span>
+
+<span class="n">b1</span> <span class="o">=</span> <span class="n">c_bool</span><span class="p">()</span>
+<span class="n">bp1</span> <span class="o">=</span> <span class="n">pointer</span><span class="p">(</span><span class="n">b1</span><span class="p">)</span>
+<span class="n">name</span> <span class="o">=</span> <span class="n">create_string_buffer</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;ComProbe Protocol Analysis System Live Import.FDFFFFFF!7776944237B4D3E24FD48E0EA82BCD697378D2;A43B83FD&quot;</span><span class="p">)</span>
+<span class="n">conf</span> <span class="o">=</span> <span class="n">create_string_buffer</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;Version=6</span><span class="se">\n</span><span class="s2">WindowTitle=Virtual Sniffer</span><span class="se">\n</span><span class="s2">DriverInfo=Bluetooth Virtual Sniffer</span><span class="se">\n</span><span class="s2">Sides=Host,1000000;Controller,1000000</span><span class="se">\n</span><span class="s2">SdeName=Octets</span><span class="se">\n</span><span class="s2">StackAuto=true</span><span class="se">\n</span><span class="s2">Stack=0x7f008039</span><span class="se">\n</span><span class="s2">Drf=Command;ACL;SCO;Event</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">g_initializeliveimport</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">dll1</span><span class="p">,</span> <span class="s2">&quot;InitializeLiveImport&quot;</span><span class="p">)</span>
+<span class="n">g_initializeliveimport</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">bp1</span><span class="p">)</span>
+
+
+<span class="n">g_releaseliveimport</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">dll1</span><span class="p">,</span> <span class="s2">&quot;ReleaseLiveImport&quot;</span><span class="p">)</span>
+
+<span class="n">g_sendframe</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">dll1</span><span class="p">,</span><span class="s2">&quot;SendFrame&quot;</span><span class="p">)</span>
+
+<span class="n">framesize</span> <span class="o">=</span> <span class="n">c_int</span><span class="p">()</span>
+<span class="n">sampleframe</span> <span class="o">=</span>  <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x09\x10\x00</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
 <p><a class="reference external" href="https://pythonhosted.org/an_example_pypi_project/sphinx.html#is-sweaty">sphinx.html</a></p>
 </div>
 
