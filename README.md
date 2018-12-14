@@ -62,6 +62,12 @@ you could use MD's local link to jump
   - online editor
     - [markdown-editor](https://dillinger.io/)
     - [plantuml-editor](https://www.planttext.com/)
+	- [ctypes-tutorial](https://docs.python.org/3/library/ctypes.html) - [chinese-ctypes](https://yodalee.blogspot.com/2017/03/python-ctypes-c.html)
+  - system tools  
+    - [dll-explorer-viewer](http://www.nirsoft.net/utils/dll_export_viewer.html) - [download](http://www.nirsoft.net/utils/dllexp.zip)
+	
+	
+	
 
 ### wireshardk
  

@@ -89,6 +89,11 @@ sofware
 
   * `markdown-editor <https://dillinger.io/>`_
   * `plantuml-editor <https://www.planttext.com/>`_
+  * `ctypes-tutorial <https://docs.python.org/3/library/ctypes.html>`_ - `chinese-ctypes <https://yodalee.blogspot.com/2017/03/python-ctypes-c.html>`_
+
+* system tools  
+
+  * `dll-explorer-viewer <http://www.nirsoft.net/utils/dll_export_viewer.html>`_ - `download <http://www.nirsoft.net/utils/dllexp.zip>`_
 
 wireshardk
 ^^^^^^^^^^

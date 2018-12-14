@@ -8,6 +8,15 @@ this is content of rst
 include-raw-code-block
 **************
 
+* basic intro `http://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html <http://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html>`_
+
+.. code-block:: rst
+  
+  表示外部的連結
+  `text <link>`_
+
+* code intro `http://www.sphinx-doc.org/en/1.5/markup/code.html <http://www.sphinx-doc.org/en/1.5/markup/code.html>`_
+
 * this uses literalinclude directive
 .. literalinclude:: setup_1.py
  
