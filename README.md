@@ -66,9 +66,6 @@ you could use MD's local link to jump
   - system tools  
     - [dll-explorer-viewer](http://www.nirsoft.net/utils/dll_export_viewer.html) - [download](http://www.nirsoft.net/utils/dllexp.zip)
 	
-	
-	
-
 ### wireshardk
  
 * build-wireshark(https://www.wireshark.org/docs/wsdg_html_chunked/ChSetupWin32.html)
