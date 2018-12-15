@@ -188,6 +188,114 @@
 <span class="n">scheduler</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 </div>
+<p><a class="reference external" href="https://docs.python.org/3/library/unittest.html">unittest usage</a></p>
+<ul class="simple">
+<li>setup.py 加上 test_suite = {tests.my_test_suite}</li>
+<li>加上 tests 子目錄, 加上”example_test.py”</li>
+<li>可以在tests 目錄執行看看, python example_test.py 看看結果</li>
+<li>執行python setup.py test 看看</li>
+<li>執行python setup.py install –record install.log 查看install.log</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; tests/__init__.py &quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">unittest</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">reference</span>
+<span class="sd">https://stackoverflow.com/questions/17001010/how-to-run-unittest-discover-from-python-setup-py-test</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="k">def</span> <span class="nf">my_test_suite</span><span class="p">():</span>
+  <span class="n">test_loader</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TestLoader</span><span class="p">()</span>
+  <span class="n">test_suite</span> <span class="o">=</span> <span class="n">test_loader</span><span class="o">.</span><span class="n">discover</span><span class="p">(</span><span class="s1">&#39;tests&#39;</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="s1">&#39;*.py&#39;</span><span class="p">)</span>
+  <span class="kn">import</span> <span class="nn">time</span>
+  <span class="k">print</span><span class="p">(</span><span class="s2">&quot;my_test_suite is invoked {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()))</span>
+  <span class="kn">import</span> <span class="nn">traceback</span>
+  <span class="n">traceback</span><span class="o">.</span><span class="n">print_exc</span><span class="p">()</span>
+  <span class="k">return</span> <span class="n">test_suite</span>
+
+<span class="sd">&quot;&quot;&quot; tests/example_test.py &quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">unittest</span>
+
+<span class="k">class</span> <span class="nc">TestStringMethods</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+  <span class="k">def</span> <span class="nf">test_upper</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="s1">&#39;FOO&#39;</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">test_isupper</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="s1">&#39;FOO&#39;</span><span class="o">.</span><span class="n">isupper</span><span class="p">())</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">assertFalse</span><span class="p">(</span><span class="s1">&#39;Foo&#39;</span><span class="o">.</span><span class="n">isupper</span><span class="p">())</span>
+
+  <span class="k">def</span> <span class="nf">test_split</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span> <span class="p">[</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">])</span>
+      <span class="c1"># check that s.split fails when the separator is not a string</span>
+      <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">):</span>
+          <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+      <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="sd">&quot;&quot;&quot; setup.py &quot;&quot;&quot;</span>
+ <span class="n">setup</span><span class="p">(</span>
+     <span class="o">....</span>
+     <span class="n">test_suite</span><span class="o">=</span><span class="s1">&#39;tests.my_test_suite&#39;</span><span class="p">,</span>
+ <span class="p">)</span>
+
+
+<span class="o">..</span> <span class="n">code</span><span class="o">-</span><span class="n">block</span><span class="p">::</span> <span class="n">python</span>
+
+   <span class="n">__title__</span> <span class="o">=</span> <span class="s1">&#39;pytest1&#39;</span>
+   <span class="n">__version__</span> <span class="o">=</span> <span class="s1">&#39;1.2.0&#39;</span>
+   <span class="n">__license__</span> <span class="o">=</span> <span class="s1">&#39;Apache License, Version 2.0 and MIT License&#39;</span>
+   <span class="n">__copyright__</span> <span class="o">=</span> <span class="s1">&#39;Copyright 2015 Stratos Inc. and Orion Labs&#39;</span>
+
+   <span class="k">try</span><span class="p">:</span>
+       <span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">find_packages</span>
+   <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+       <span class="kn">from</span> <span class="nn">distutils.core</span> <span class="kn">import</span> <span class="n">setup</span>  <span class="c1"># pylint: disable=F0401,E0611</span>
+
+   <span class="c1">#with open(&#39;README.rst&#39;) as f:</span>
+   <span class="c1">#    readme = f.read()</span>
+   <span class="n">readme</span> <span class="o">=</span> <span class="s2">&quot;this is readme content&quot;</span>
+   <span class="c1">#with open(&#39;CHANGELOG.rst&#39;) as f:</span>
+   <span class="c1">#    changelog = f.read()</span>
+   <span class="n">changelog</span> <span class="o">=</span> <span class="s2">&quot;this is changelog content&quot;</span>
+
+   <span class="n">setup</span><span class="p">(</span>
+       <span class="n">name</span><span class="o">=</span><span class="n">__title__</span><span class="p">,</span>
+       <span class="n">version</span><span class="o">=</span><span class="n">__version__</span><span class="p">,</span>
+       <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Python Bluetooth LE (Low Energy) and GATT Library&#39;</span><span class="p">,</span>
+       <span class="n">author</span><span class="o">=</span><span class="s1">&#39;Chris Peplin &lt;github@rhubarbtech.com&gt;&#39;</span><span class="p">,</span>
+       <span class="n">author_email</span><span class="o">=</span><span class="s1">&#39;github@rhubarbtech.com&#39;</span><span class="p">,</span>
+       <span class="n">packages</span><span class="o">=</span><span class="n">find_packages</span><span class="p">(</span><span class="n">exclude</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;tests&quot;</span><span class="p">,</span> <span class="s2">&quot;tests.*&quot;</span><span class="p">)),</span>
+       <span class="n">package_data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;LICENSE&#39;</span><span class="p">]},</span>
+       <span class="n">license</span><span class="o">=</span><span class="s2">&quot;Apache 2.0 and MIT&quot;</span><span class="p">,</span>
+       <span class="n">long_description</span><span class="o">=</span><span class="n">readme</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">changelog</span><span class="p">,</span>
+       <span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://github.com/peplin/pygatt&#39;</span><span class="p">,</span>
+       <span class="n">install_requires</span><span class="o">=</span><span class="p">[</span>
+           <span class="s1">&#39;pyserial&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;enum-compat&#39;</span>
+       <span class="p">],</span>
+       <span class="n">setup_requires</span><span class="o">=</span><span class="p">[</span>
+           <span class="s1">&#39;coverage &gt;= 3.7.1&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;nose &gt;= 1.3.7&#39;</span>
+       <span class="p">],</span>
+       <span class="n">extras_require</span><span class="o">=</span><span class="p">{</span>
+           <span class="s1">&#39;GATTTOOL&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;pexpect&quot;</span><span class="p">],</span>
+       <span class="p">},</span>
+       <span class="n">test_suite</span><span class="o">=</span><span class="s1">&#39;tests.my_test_suite&#39;</span><span class="p">,</span>
+       <span class="n">zip_safe</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+       <span class="n">include_package_data</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+       <span class="n">classifiers</span><span class="o">=</span><span class="p">(</span>
+           <span class="s1">&#39;Intended Audience :: Developers&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;License :: OSI Approved :: Apache Software License&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;License :: OSI Approved :: MIT License&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;Programming Language :: Python&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;Programming Language :: Python :: 2.7&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;Programming Language :: Python :: 3&#39;</span><span class="p">,</span>
+       <span class="p">)</span>
+   <span class="p">)</span>
+</pre></div>
+</div>
 <p>This is a statement.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
