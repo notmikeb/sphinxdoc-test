@@ -357,8 +357,9 @@ d:<span class="se">\g</span>it_home<span class="se">\s</span>phinxdoc<span class
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">from</span> <span class="nn">ctypes</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">ctypes</span>
 
-<span class="n">dll1</span> <span class="o">=</span> <span class="n">cdll</span><span class="o">.</span><span class="n">WinDll</span><span class="p">(</span><span class="s2">&quot;LiveImportAPI_x64&quot;</span><span class="p">)</span>
+<span class="n">dll1</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">WinDLL</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;LiveImportAPI_x64.dll&quot;</span><span class="p">)</span>
 
 <span class="n">b1</span> <span class="o">=</span> <span class="n">c_bool</span><span class="p">()</span>
 <span class="n">bp1</span> <span class="o">=</span> <span class="n">pointer</span><span class="p">(</span><span class="n">b1</span><span class="p">)</span>
@@ -366,7 +367,7 @@ d:<span class="se">\g</span>it_home<span class="se">\s</span>phinxdoc<span class
 <span class="n">conf</span> <span class="o">=</span> <span class="n">create_string_buffer</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;Version=6</span><span class="se">\n</span><span class="s2">WindowTitle=Virtual Sniffer</span><span class="se">\n</span><span class="s2">DriverInfo=Bluetooth Virtual Sniffer</span><span class="se">\n</span><span class="s2">Sides=Host,1000000;Controller,1000000</span><span class="se">\n</span><span class="s2">SdeName=Octets</span><span class="se">\n</span><span class="s2">StackAuto=true</span><span class="se">\n</span><span class="s2">Stack=0x7f008039</span><span class="se">\n</span><span class="s2">Drf=Command;ACL;SCO;Event</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="n">g_initializeliveimport</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">dll1</span><span class="p">,</span> <span class="s2">&quot;InitializeLiveImport&quot;</span><span class="p">)</span>
-<span class="n">g_initializeliveimport</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">bp1</span><span class="p">)</span>
+<span class="n">init_ret</span> <span class="o">=</span> <span class="n">g_initializeliveimport</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">bp1</span><span class="p">)</span>
 
 
 <span class="n">g_releaseliveimport</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">dll1</span><span class="p">,</span> <span class="s2">&quot;ReleaseLiveImport&quot;</span><span class="p">)</span>
@@ -374,7 +375,32 @@ d:<span class="se">\g</span>it_home<span class="se">\s</span>phinxdoc<span class
 <span class="n">g_sendframe</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">dll1</span><span class="p">,</span><span class="s2">&quot;SendFrame&quot;</span><span class="p">)</span>
 
 <span class="n">framesize</span> <span class="o">=</span> <span class="n">c_int</span><span class="p">()</span>
-<span class="n">sampleframe</span> <span class="o">=</span>  <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x09\x10\x00</span><span class="s2">&quot;</span>
+<span class="n">sampleframe1</span> <span class="o">=</span>  <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x09\x10\x00</span><span class="s2">&quot;</span>
+<span class="n">sampleframe2</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x0e\x0a\x01\x09\x10\x00\x82\x14\x01\x5b\x02\x00</span><span class="s2">&quot;</span> <span class="c1"># 0x01 (slide),0x08  (flag)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Action4ButtonText=Send ACL Data</span>
+<span class="sd">Action4LabelText=Simulate sending ACL data from a Host to a remote Bluetooth Device.</span>
+<span class="sd">Action4Data=0x00,0x02,0x28,0x20,0x1c,0x00,0x18,0x00,0x40,0x00,0x4d,0x65,0x73,0x73,0x61,0x67,0x65,0x20,0x74,0x6f,0x20,0x72,0x65,0x6d,0x6f,0x74,0x65,0x20,0x64,0x65,0x76,0x69,0x63,0x65</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">sampleframe3</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x28\x20\x1c\x00\x18\x00\x40\x00\x4d\x65\x73\x73\x61\x67\x65\x20\x74\x6f\x20\x72\x65\x6d\x6f\x74\x65\x20\x64\x65\x76\x69\x63\x65</span><span class="s2">&quot;</span> <span class="c1">#</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Action5ButtonText=Receive ACL Data</span>
+<span class="sd">Action5LabelText=Simulate receiving ACL data from a remote Bluetooth Device.</span>
+<span class="sd">Action5Data=0x01,0x02,0x28,0x20,0x1e,0x00,0x1a,0x00,0x40,0x00,0x4d,0x65,0x73,0x73,0x61,0x67,0x65,0x20,0x66,0x72,0x6f,0x6d,0x20,0x72,0x65,0x6d,0x6f,0x74,0x65,0x20,0x64,0x65,0x76,0x69,0x63,0x65</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">sampleframe4</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x28\x20\x1e\x00\x1a\x00\x40\x00\x4d\x65\x73\x73\x61\x67\x65\x20\x66\x72\x6f\x6d\x20\x72\x65\x6d\x6f\x74\x65\x20\x64\x65\x76\x69\x63\x65</span><span class="s2">&quot;</span>
+
+<span class="k">if</span> <span class="mi">0</span> <span class="o">==</span> <span class="n">init_ret</span><span class="p">:</span>
+  <span class="kn">import</span> <span class="nn">time</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;init okay !&quot;</span><span class="p">)</span>
+  <span class="n">g_sendframe</span><span class="p">(</span> <span class="n">c_int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sampleframe1</span><span class="p">)),</span> <span class="n">c_int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sampleframe1</span><span class="p">)),</span> <span class="n">sampleframe1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">c_longdouble</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()))</span>
+  <span class="n">g_sendframe</span><span class="p">(</span> <span class="n">c_int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sampleframe2</span><span class="p">)),</span> <span class="n">c_int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sampleframe2</span><span class="p">)),</span> <span class="n">sampleframe2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c_longdouble</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()))</span> 
+  <span class="n">g_sendframe</span><span class="p">(</span> <span class="n">c_int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sampleframe3</span><span class="p">)),</span> <span class="n">c_int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sampleframe3</span><span class="p">)),</span> <span class="n">sampleframe3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">c_longdouble</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()))</span> 
+  <span class="n">g_sendframe</span><span class="p">(</span> <span class="n">c_int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sampleframe4</span><span class="p">)),</span> <span class="n">c_int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sampleframe4</span><span class="p">)),</span> <span class="n">sampleframe4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c_longdouble</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()))</span> 
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;init failed !&quot;</span><span class="p">)</span>
+
+<span class="n">g_releaseliveimport</span><span class="p">()</span>
 </pre></div>
 </div>
 <p><a class="reference external" href="https://pythonhosted.org/an_example_pypi_project/sphinx.html#is-sweaty">sphinx.html</a></p>
