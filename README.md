@@ -79,7 +79,9 @@ use vs2017, qt, chocolatey
 * [an994](https://www.silabs.com/documents/login/application-notes/AN994.pdf)
 
 
-
+### file format
+* [btsnoop-bt](http://www.fte.com/webhelp/bpa600/Content/Technical_Information/BT_Snoop_File_Format.htm)
+* [libpcap-wireshark](https://wiki.wireshark.org/Development/LibpcapFileFormat)
 
 
 ## note

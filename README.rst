@@ -113,5 +113,12 @@ bt-at-command
 * 
   `an994 <https://www.silabs.com/documents/login/application-notes/AN994.pdf>`_
 
+file format
+^^^^^^^^^^^
+
+
+* `btsnoop-bt <http://www.fte.com/webhelp/bpa600/Content/Technical_Information/BT_Snoop_File_Format.htm>`_
+* `libpcap-wireshark <https://wiki.wireshark.org/Development/LibpcapFileFormat>`_
+
 note
 ----
