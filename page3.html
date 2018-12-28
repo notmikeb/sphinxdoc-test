@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>this is page3 &mdash; sphinxdoc-test  documentation</title>
+  <title>pybtday &mdash; sphinxdoc-test  documentation</title>
   
 
   
@@ -82,7 +82,7 @@
 <li class="toctree-l1"><a class="reference internal" href="includeme.html">Bluetooth Links</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rst.html">RST links</a></li>
 <li class="toctree-l1"><a class="reference internal" href="page2.html">Python modules</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">this is page3</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">pybtday</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#purpose">purpose</a></li>
 </ul>
 </li>
@@ -131,7 +131,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>this is page3</li>
+      <li>pybtday</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -150,11 +150,39 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="this-is-page3">
-<h1>this is page3<a class="headerlink" href="#this-is-page3" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="pybtday">
+<h1>pybtday<a class="headerlink" href="#pybtday" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="purpose">
 <h2>purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
-<p>this is content of page3</p>
+<p>a python bt stack with multi-instance support
+a tx and rx async thread</p>
+<dl class="docutils">
+<dt>device_factory life cycle</dt>
+<dd>add_factory
+get_device
+show_devices
+assign_device(id, )</dd>
+<dt>device life cycle</dt>
+<dd>idle
+initing
+inited
+deiniting
+deinited</dd>
+</dl>
+<p>HciMod // hci module</p>
+<dl class="docutils">
+<dt>plan_manager</dt>
+<dd><p class="first">run each case_manager, make sure all device state is right
+case_manager</p>
+<blockquote class="last">
+<div>run case based</div></blockquote>
+</dd>
+</dl>
+<p>new a bt_stack object and bind it with a transport object</p>
+<dl class="docutils">
+<dt>python use zadig</dt>
+<dd><a class="reference external" href="https://zadig.akeo.ie/">https://zadig.akeo.ie/</a> - zadig software to install libusb</dd>
+</dl>
 </div>
 </div>
 
