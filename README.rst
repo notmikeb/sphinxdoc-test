@@ -126,3 +126,5 @@ file format
 
 note
 ----
+
+* `explorer-flask-doc <https://explore-flask.readthedocs.io/en/latest/organizing.html>`__
