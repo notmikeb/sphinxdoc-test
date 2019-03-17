@@ -7,7 +7,8 @@ purpose
 a python bt stack with multi-instance support
 a tx and rx async thread 
 
-
+example
+************
 device_factory life cycle
    add_factory 
    get_device
@@ -23,7 +24,7 @@ device life cycle
 
 .. code-block:: python
   GenericDevice
-    # (spider_sdk\dut\dev.py)
+    # (btday_sdk\dut\dev.py)
 	self.elmgr = EventLoopMgr(conf.did + '.el')
 	self.drv = DrvMgr.get_drv(conf.url)
 
