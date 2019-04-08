@@ -122,11 +122,13 @@ file format
 
 
 * `btsnoop-bt <http://www.fte.com/webhelp/bpa600/Content/Technical_Information/BT_Snoop_File_Format.htm>`_
-* 
-  `libpcap-wireshark <https://wiki.wireshark.org/Development/LibpcapFileFormat>`_
+* `libpcap-wireshark <https://wiki.wireshark.org/Development/LibpcapFileFormat>`_
 
-* 
-  `hci-cmd <http://www.lisha.ufsc.br/teaching/shi/ine5346-2003-1/work/bluetooth/hci_commands.html>`_
+reference
+^^^^^^^^^
+
+
+* `hci-cmd <http://www.lisha.ufsc.br/teaching/shi/ine5346-2003-1/work/bluetooth/hci_commands.html>`_
 
 note
 ----

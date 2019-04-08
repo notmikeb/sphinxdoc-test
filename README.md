@@ -86,6 +86,7 @@ use vs2017, qt, chocolatey
 * [btsnoop-bt](http://www.fte.com/webhelp/bpa600/Content/Technical_Information/BT_Snoop_File_Format.htm)
 * [libpcap-wireshark](https://wiki.wireshark.org/Development/LibpcapFileFormat)
 
+### reference
 * [hci-cmd](http://www.lisha.ufsc.br/teaching/shi/ine5346-2003-1/work/bluetooth/hci_commands.html)
 
 ## note
