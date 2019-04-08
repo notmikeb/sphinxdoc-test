@@ -89,5 +89,6 @@ use vs2017, qt, chocolatey
 ### reference
 * [hci-cmd](http://www.lisha.ufsc.br/teaching/shi/ine5346-2003-1/work/bluetooth/hci_commands.html)
 * [hack-bluetooth](https://conference.hitb.org/hitbsecconf2014kul/materials/D2T2%20-%20Mike%20Ryan%20-%20NSA%20Playset%20Bluetooth%20Smart.pdf)
+* [scapy-doc](https://scapy.readthedocs.io/en/latest/build_dissect.html)
 
 ## note
