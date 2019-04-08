@@ -129,6 +129,7 @@ reference
 
 
 * `hci-cmd <http://www.lisha.ufsc.br/teaching/shi/ine5346-2003-1/work/bluetooth/hci_commands.html>`_
+* `hack-bluetooth <https://conference.hitb.org/hitbsecconf2014kul/materials/D2T2%20-%20Mike%20Ryan%20-%20NSA%20Playset%20Bluetooth%20Smart.pdf>`_
 
 note
 ----
