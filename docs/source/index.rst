@@ -14,6 +14,7 @@ Welcome to sphinxdoc-test's documentation!
    rst
    page2
    page3
+   uml
 
 
 
