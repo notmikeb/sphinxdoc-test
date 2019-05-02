@@ -89,6 +89,8 @@ sofware
 
   * `markdown-editor <https://dillinger.io/>`_
   * `plantuml-editor <https://www.planttext.com/>`_
+  * `plantuml-online <https://plantuml-editor.kkeisuke.com>`_
+  * `mscgen-js <https://mscgen.js.org/>`_
   * `ctypes-tutorial <https://docs.python.org/3/library/ctypes.html>`_ - `chinese-ctypes <https://yodalee.blogspot.com/2017/03/python-ctypes-c.html>`_
 
 * system tools  
